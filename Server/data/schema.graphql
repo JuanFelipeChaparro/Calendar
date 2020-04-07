@@ -4,8 +4,8 @@ type Event {
     title: String
     date: Date
     description: String
-    type: EventType
-    owner: Owner
+    type: String
+    owner: String
     location: String
 }
 
@@ -14,32 +14,17 @@ type Date {
     endDate: String
 }
 
-# Enums
-enum Owner {
-    SALES
-    CX
-    HUMAN_RESOURCES
-    PROCUREMENT
-    MARKETING
-}
-
-enum EventType {
-    WORKSHOP
-    CONFERENCE
-    WEBINAR
-}
-
 # Inputs
-input eventInput {
+input EventInput {
     title: String!
-    date: dateInput
+    date: DateInput
     description: String!
-    type: EventType!
-    owner: Owner!
+    type: String!
+    owner: String!
     location: String!
 }
 
-input dateInput {
+input DateInput {
     startDate: String!
     endDate: String
 }
@@ -48,9 +33,10 @@ input dateInput {
 type Query {
     getEvents(limit: Int, offset: Int): [Event]
     getEvent(id: ID!): Event
+    getEnums(enumName: String!): [String]
 }
 
 # Mutations
 type Mutation {
-    createEvent(input: eventInput!): String
+    createEvent(input: EventInput!): String
 }

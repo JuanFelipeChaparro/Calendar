@@ -14,6 +14,12 @@ const eventSchema = new mongoose.Schema({
     location: String
 });
 
-const Event = mongoose.model('Event', eventSchema);
+const enumSchema = new mongoose.Schema({
+    title: String,
+    data: Array
+});
 
-export { Event };
+const Event = mongoose.model('Event', eventSchema);
+const Enum = mongoose.model('Enum', enumSchema);
+
+export { Event, Enum };

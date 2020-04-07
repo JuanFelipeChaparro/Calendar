@@ -1,0 +1,56 @@
+# Types
+type Event {
+    id: ID
+    title: String
+    date: Date
+    description: String
+    type: EventType
+    owner: Owner
+    location: String
+}
+
+type Date {
+    startDate: String
+    endDate: String
+}
+
+# Enums
+enum Owner {
+    SALES
+    CX
+    HUMAN_RESOURCES
+    PROCUREMENT
+    MARKETING
+}
+
+enum EventType {
+    WORKSHOP
+    CONFERENCE
+    WEBINAR
+}
+
+# Inputs
+input eventInput {
+    title: String!
+    date: dateInput
+    description: String!
+    type: EventType!
+    owner: Owner!
+    location: String!
+}
+
+input dateInput {
+    startDate: String!
+    endDate: String
+}
+
+# Queries
+type Query {
+    getEvents(limit: Int, offset: Int): [Event]
+    getEvent(id: ID!): Event
+}
+
+# Mutations
+type Mutation {
+    createEvent(input: eventInput!): String
+}

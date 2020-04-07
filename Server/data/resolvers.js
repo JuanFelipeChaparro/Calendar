@@ -8,11 +8,11 @@ export const resolvers = {
 		},
 		getEvent: (root, {id}) => {
 			return new Promise((resolve, object) => {
-                Event.findById(id, (error, event) => {
-                    if (error) rejects(error)
-                    else resolve(event)
-                });
-            });
+				Event.findById(id, (error, event) => {
+		    		if (error) rejects(error)
+					else resolve(event)
+				});
+	    	});
 		}
 	},
 
@@ -28,11 +28,11 @@ export const resolvers = {
 			});
 
 			return new Promise((resolve, object) => {
-                newEvent.save((error) => {
-                    if (error) rejects(error)
-                    else resolve("Event created successfully")
-                });
-            });
+				newEvent.save((error) => {
+					if (error) rejects(error)
+					else resolve("Event created successfully")
+				});
+			});
 		}
 	}
 };

@@ -1,10 +1,13 @@
 import React from 'react';
+import { Navbar } from 'react-bootstrap';
 
 const Header = () => (
-    <div className="nav-bar">
-        <img className="img-nav-bar ml-2 pt-5" src="/logo192.png" alt="React Logo"/>
-        <h1 className="title-nav-bar title-center margin-auto pt-5 font-family-roboto fw-700">React Calendar</h1>
-    </div>
+    <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="/">
+            <img alt="React Logo" src="/logo192.png" width="30" height="30" className="d-inline-block align-top"/>
+            {` React Calendar`}
+        </Navbar.Brand>
+    </Navbar>
 );
 
 export default Header;

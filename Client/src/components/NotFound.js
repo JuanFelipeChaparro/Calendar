@@ -1,5 +1,10 @@
 import React from 'react';
+import { Alert } from 'react-bootstrap';
 
-const NotFound = () => <h2 className="title-center font-family-monospace">404 Page Not Found</h2>;
+const NotFound = () => (
+    <Alert dismissible={false} variant='danger'>
+        <Alert.Heading className="text-center">404 Page Not Found</Alert.Heading>
+    </Alert>
+);
 
 export default NotFound;

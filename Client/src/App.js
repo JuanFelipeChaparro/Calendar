@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -11,8 +12,8 @@ const App = () => (
 		<Fragment>
 			<Header />
 			<Switch>
-				<Route path="/" component={ListView} />
-				<Route path="*" component={NotFound} />
+				<Route exact path="/" component={ListView} />
+				<Route exact path="*" component={NotFound} />
 			</Switch>
 		</Fragment>
 	</Router>

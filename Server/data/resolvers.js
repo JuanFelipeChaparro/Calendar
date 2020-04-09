@@ -4,7 +4,7 @@ export const resolvers = {
 
     Query: {
         getEvents: (root, {limit, offset}) => {
-            return Event.find({}).limit(limit).skip(offset);
+            return Event.find({}).limit(limit).skip(offset).sort({'date.startDate': -1});
         },
         getEvent: (root, {id}) => {
             return new Promise((resolve, reject) => {

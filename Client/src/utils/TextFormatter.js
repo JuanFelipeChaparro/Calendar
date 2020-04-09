@@ -1,11 +1,13 @@
 export const getTitleProper = title => {
-    const items = title.split(" ");
-    const words = [];
+    if (title.search("http") === -1) {
+        const items = title.split(" ");
+        const words = [];
 
-    for (let i in items)
-        words.push(items[i][0].toUpperCase() + items[i].slice(1, items[i].length));
+        for (let i in items)
+            words.push(items[i][0].toUpperCase() + items[i].slice(1, items[i].length));
 
-    return words.join(" ");
+        return words.join(" ");
+    } else return title;
 };
 
 export const getOwnerProper = owner => {

@@ -14,3 +14,13 @@ query getEvents($limit: Int, $offset: Int) {
         owner
     }
 }`;
+
+export const GET_OWNERS = gql`
+{
+    getEnums(enumName: "OWNERS")
+}`;
+
+export const GET_EVENT_TYPES = gql`
+{
+    getEnums(enumName: "EVENT_TYPES")
+}`;

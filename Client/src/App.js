@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Layout/Header';
 import ListView from './components/Calendar/ListView';
+import CalendarView from './components/Calendar/CalendarView';
 import CreateEvent from './components/Calendar/CreateEvent';
 import NotFound from './components/NotFound';
 
@@ -15,6 +16,7 @@ const App = () => (
 			<Switch>
 				<Route exact path="/" component={ListView} />
 				<Route exact path="/q/:query" component={ListView} />
+				<Route exact path="/calendar" component={CalendarView} />
 				<Route exact path="/create/event" component={CreateEvent} />
 				<Route exact path="*" component={NotFound} />
 			</Switch>

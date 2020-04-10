@@ -52,7 +52,7 @@ const ListView = ({ match, history }) => {
                     <Col sm={2}>
                         <ButtonGroup aria-label="buttons">
                             <Button variant="primary" disabled>{ListIcon()}</Button>
-                            <Button variant="primary">{CalendarIcon()}</Button>
+                            <Link to="/calendar" className="btn btn-primary">{CalendarIcon()}</Link>
                             <Link to="/create/event" className="btn btn-primary">{PlusIcon()}</Link>
                         </ButtonGroup>
                     </Col>
@@ -60,7 +60,7 @@ const ListView = ({ match, history }) => {
             </Container>
 
             { data.getEvents.length === 0 ? <h3 className="h3 text-align-center mt-5">{`No results for '${query}'`}</h3> : 
-                <Table className="mt-5 text-align-center" responsive striped bordered hover variant="light">
+                <Table className="mt-5 text-align-center table-hover" responsive variant="light">
                     <thead>
                         <tr>
                             <th>Date</th>

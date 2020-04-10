@@ -21,7 +21,7 @@ const ModalInfoEvent = ({ show, id, onHide }) => {
     const endDate = new Date(Number(event.date.endDate));
 
     return (
-        <Modal centered show={show} onHide={onHide}>
+        <Modal centered show={show} onHide={onHide} size="md">
             <Modal.Header closeButton>
                 <Modal.Title>
                     <p>{event.title}</p>

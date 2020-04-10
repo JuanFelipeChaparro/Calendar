@@ -15,6 +15,19 @@ query getEvents($limit: Int, $offset: Int) {
     }
 }`;
 
+export const GET_EVENT = gql`
+query getEvent($id: ID!) {
+    getEvent(id: $id) {
+        date {
+            startDate
+            endDate
+        }
+        title
+        location
+        description
+    }
+}`;
+
 export const GET_OWNERS = gql`
 {
     getEnums(enumName: "OWNERS")

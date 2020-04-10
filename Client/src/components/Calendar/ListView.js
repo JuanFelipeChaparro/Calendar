@@ -1,20 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_EVENTS } from '../../queries';
 import ListViewRow from './ListViewRow';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, ButtonGroup, Button, InputGroup, FormControl, Table } from 'react-bootstrap';
 import { CalendarIcon, ListIcon, PlusIcon } from '../../utils/Icons';
-
-const onClickRow = id => {
-    console.log(id);
-}
+import ModalInfoEvent from './ModalInfoEvent';
 
 const ListView = () => {
+    const [show, setShow] = useState(false);
+    const [idRow, setIdRow] = useState(false);
     const { loading, error, data } = useQuery(GET_EVENTS, {
         fetchPolicy: "network-only"
     });
-
+    
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
 
@@ -52,10 +51,12 @@ const ListView = () => {
                 </thead>
                 <tbody className="cursor-pointer">
                     {data.getEvents.map(event => (
-                        <ListViewRow key={event.id} event={event} onClickRow={onClickRow} />
+                        <ListViewRow key={event.id} event={event} setId={setIdRow} showModal={setShow} />
                     ))}
                 </tbody>
             </Table>
+
+            {show ? <ModalInfoEvent id={idRow} show={show} onHide={() => setShow(false)} /> : ''}
         </Fragment>
     );
 };

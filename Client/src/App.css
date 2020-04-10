@@ -34,3 +34,16 @@ tbody.cursor-pointer td {
 .word-break-all {
     word-break: break-all;
 }
+
+.modal-title p {
+    margin: 0;
+}
+
+.modal-body p {
+    margin: 0;
+}
+
+.modal-title .sub-text-modal {
+    word-break: break-all;
+    font-size: 1rem;
+}

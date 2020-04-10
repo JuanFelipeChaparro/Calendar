@@ -10,6 +10,8 @@ export const getTitleProper = title => {
     } else return title;
 };
 
+export const getProperDescription = description => (description.length > 40) ? description.slice(0, 40) + "..." : description;
+
 export const getOwnerProper = owner => {
     const words = owner.split("_");
     return words.join(" ");

@@ -77,7 +77,7 @@ class CreateEvent extends Component {
 
                         <Form.Group onChange={this.onChangeInput}>
                             <Form.Label>Description</Form.Label>
-                            <Form.Control as="textarea" rows="2" name="description" />
+                            <Form.Control as="textarea" rows="2" name="description" placeholder="Description" required/>
                         </Form.Group>
 
                         <SelectOwners onChange={this.onChangeInput}/>

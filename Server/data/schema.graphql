@@ -31,7 +31,7 @@ input DateInput {
 
 # Queries
 type Query {
-    getEvents(limit: Int, offset: Int): [Event]
+    getEvents(limit: Int, offset: Int, query: String): [Event]
     getEvent(id: ID!): Event
     getEnums(enumName: String!): [String]
 }

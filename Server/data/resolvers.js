@@ -3,8 +3,13 @@ import { Event, Enum } from './db';
 export const resolvers = {
 
     Query: {
-        getEvents: (root, {limit, offset}) => {
-            return Event.find({}).limit(limit).skip(offset).sort({'date.startDate': -1});
+        getEvents: (root, {limit, offset, query}) => {
+            let filter = {};
+
+            if (query) 
+                if (query.trim().length > 0) filter = {title: RegExp(query.trim(), 'i')};
+            
+            return Event.find(filter).limit(limit).skip(offset).sort({'date.startDate': -1});
         },
         getEvent: (root, {id}) => {
             return new Promise((resolve, reject) => {

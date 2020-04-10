@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 export const GET_EVENTS = gql`
-query getEvents($limit: Int, $offset: Int) {
-    getEvents(limit: $limit, offset: $offset) {
+query getEvents($limit: Int, $offset: Int, $query: String) {
+    getEvents(limit: $limit, offset: $offset, query: $query) {
         id
         date {
             startDate

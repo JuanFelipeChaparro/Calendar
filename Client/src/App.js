@@ -14,6 +14,7 @@ const App = () => (
 			<Header />
 			<Switch>
 				<Route exact path="/" component={ListView} />
+				<Route exact path="/q/:query" component={ListView} />
 				<Route exact path="/create/event" component={CreateEvent} />
 				<Route exact path="*" component={NotFound} />
 			</Switch>
